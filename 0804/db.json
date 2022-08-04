@@ -1,0 +1,27 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "HTML",
+      "completed": true,
+      "a": true
+    },
+    {
+      "id": 2,
+      "content": "CSS",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "content": "test",
+      "completed": true,
+      "a": true
+    },
+    {
+      "id": 4,
+      "content": "HTML",
+      "completed": true,
+      "a": true
+    }
+  ]
+}
