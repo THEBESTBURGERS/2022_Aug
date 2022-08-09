@@ -13,12 +13,6 @@
     },
     {
       "id": 3,
-      "content": "test",
-      "completed": true,
-      "a": true
-    },
-    {
-      "id": 4,
       "content": "HTML",
       "completed": true,
       "a": true
