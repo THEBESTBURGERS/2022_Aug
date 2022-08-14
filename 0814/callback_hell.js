@@ -41,14 +41,33 @@ class UserStorage {
     }, 1000);
   }
 }
+const userStorage = new UserStorage();
+// const id = prompt('id');
+// const pw = prompt('pw');
+
+const id = 'kyoung';
+const pw = '1620';
+userStorage.loginUser(
+  id,
+  pw,
+  user => {
+    userStorage.getRoles(
+      user,
+      (obj)=> console.log(obj),
+      (err)=> console.log(err)
+    )
+  },
+  err => console.log(err));
 // --------------------------------------
-let id = "kyoung2";
-let password = "1620";
+// let id = "kyoung2";
+// let password = "1620";
 
-const user1 = new UserStorage()
+// const user1 = new UserStorage()
 
-const onSuccess = function(id){
-  console.log("test", id);
-}
-
-user1.loginUser(id, password, onSuccess(id), onError);
+// const onSuccess = function(id){
+//   user1.getRoles(id)
+// }
+// function onError(err) {
+//   err();
+// }
+// user1.loginUser(id, password, onSuccess(id), onError(()=> console.log()));
