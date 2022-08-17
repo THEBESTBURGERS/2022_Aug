@@ -7,40 +7,40 @@
 // 1. State : pending(대기) -> fulfilled(성공) or rejected(실패)
 // 2. Producer vs Consumer
 
-// // 1. Producer
-// // 새로운 프로미스가 만들어질때 전달한 executor 콜백함수가 바로 실행된다.
-// const promise = new Promise((resolve, reject) => {
-//   // 네트워크나 파일통신같이 시간이 오래걸리는 헤비한일
-//   console.log('doing somthing...');
-//   setTimeout(()=>{
-//     // resolve('ellie');
-//     reject(new Error('no network'));
-//   }, 2000);
-// });
+// 1. Producer
+// 새로운 프로미스가 만들어질때 전달한 executor 콜백함수가 바로 실행된다.
+const promise = new Promise((resolve, reject) => {
+  // 네트워크나 파일통신같이 시간이 오래걸리는 헤비한일
+  console.log('doing somthing...');
+  setTimeout(()=>{
+    // resolve('ellie');
+    reject(new Error('no network'));
+  }, 2000);
+});
 
 
-// // 2. Consumers
-// promise
-//   .then(value => {
-//     console.log(value);
-//   })
-//   .catch(err => console.log(err));
+// 2. Consumers
+promise
+  .then(value => {
+    console.log(value);
+  })
+  .catch(err => console.log(err));
 
 
-// // 3. Promise chaining
-// const fetchNumber = new Promise((resolve, reject) => {
-//   setTimeout(() => resolve, 1000);
-// });
+// 3. Promise chaining
+const fetchNumber = new Promise((resolve, reject) => {
+  setTimeout(() => resolve, 1000);
+});
 
-// fetchNumber
-// .then(num => num *2)
-// .then(num => num *3)
-// .then(num => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => resolve(num -1), 1000);
-//   });
-// })
-// .then(num => console.log(num));
+fetchNumber
+.then(num => num *2)
+.then(num => num *3)
+.then(num => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(num -1), 1000);
+  });
+})
+.then(num => console.log(num));
 
 
 
